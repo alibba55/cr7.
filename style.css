@@ -1,0 +1,13 @@
+/* Hero Section */
+.hero {
+    background: url('https://cdn.ntvspor.net/dcef032d168f4515aa229505a8d8d422.jpg?mode=crop&w=940&h=626') center/cover no-repeat;
+    color: #fff;
+    padding: 150px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
