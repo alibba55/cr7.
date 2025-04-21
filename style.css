@@ -1,14 +1,24 @@
 /* Genel Stiller */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    background: #1a1a1a;
     color: #fff;
+    margin: 0;
+    padding: 0;
     min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Navbar */
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
     background: rgba(0, 0, 0, 0.8);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     padding: 1rem 0;
 }
@@ -16,6 +26,7 @@ body {
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
+    color: #fff !important;
 }
 
 .navbar-brand i {
@@ -24,24 +35,26 @@ body {
 }
 
 .nav-link {
-    font-weight: 500;
-    padding: 0.5rem 1rem !important;
-    transition: all 0.3s ease;
+    color: rgba(255, 255, 255, 0.8) !important;
+    transition: color 0.3s ease;
 }
 
-.nav-link:hover {
-    color: #ff4d4d !important;
+.nav-link:hover,
+.nav-link.active {
+    color: #fff !important;
 }
 
 /* Hero Section */
 .hero {
     position: relative;
-    height: 60vh;
-    background: url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover;
+    height: 100vh;
+    width: 100%;
+    background: url('https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt1a45d6f4ae0f3d3f/60db790b47339c0fc9df4f1b/3d4b0e9a6c2435e3a0049bc8e72f8a766c42d84b.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
 }
 
 .hero::before {
@@ -51,22 +64,19 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    padding: 2rem;
     max-width: 800px;
     margin: 0 auto;
-    padding: 2rem;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: bold;
     margin-bottom: 1rem;
     color: #fff;
@@ -74,13 +84,23 @@ body {
 }
 
 .hero p {
-    font-size: 1.2rem;
-    color: #ccc;
+    font-size: 1.5rem;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Featured Edits */
 .featured-edits {
+    background: #1a1a1a;
     padding: 4rem 0;
+}
+
+.section-title {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
 .edit-card {
@@ -88,7 +108,6 @@ body {
     border-radius: 15px;
     overflow: hidden;
     transition: transform 0.3s ease;
-    margin-bottom: 2rem;
     height: 100%;
 }
 
@@ -113,23 +132,28 @@ body {
 }
 
 .edit-card p {
-    color: #ccc;
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 1.5rem;
 }
 
 .watch-btn {
+    display: inline-block;
     background: #ff4d4d;
-    border: none;
-    padding: 0.5rem 1.5rem;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
     border-radius: 25px;
-    color: white;
-    font-weight: 500;
+    text-decoration: none;
     transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
 }
 
 .watch-btn:hover {
     background: #ff3333;
     transform: scale(1.05);
+    color: #fff;
 }
 
 /* Video Modal */
@@ -141,36 +165,64 @@ body {
 
 .modal-header {
     border-bottom: none;
+    padding: 1.5rem;
+}
+
+.modal-title {
+    color: #fff;
 }
 
 .btn-close {
     filter: invert(1) grayscale(100%) brightness(200%);
 }
 
+.video-modal-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-modal-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 /* Footer */
-.footer {
+footer {
     background: rgba(0, 0, 0, 0.8);
-    color: #ccc;
-    margin-top: auto;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 2rem 0;
+    text-align: center;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .hero {
-        height: 50vh;
-    }
-
     .hero h1 {
         font-size: 2.5rem;
     }
 
     .hero p {
-        font-size: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
     }
 
     .edit-card {
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
     }
+}
+
+/* Main Content Padding */
+.main-content {
+    padding-top: 5rem;
+    padding-bottom: 3rem;
 }
 
 /* Video Table Styles */
@@ -207,10 +259,4 @@ body {
     height: 60px;
     object-fit: cover;
     border-radius: 5px;
-}
-
-/* Main Content Padding */
-.main-content {
-    padding-top: 6rem;
-    padding-bottom: 3rem;
-}
+} 
