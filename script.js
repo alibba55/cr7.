@@ -1,90 +1,119 @@
-// Video verileri
+// Edit verileri
 const edits = [
     {
-        title: "RONALDO EDIT 1",
+        title: "REAL MADRİD",
         video: "https://www.youtube.com/embed/YoBcN-7ZdQs?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
-        description: "Muhteşem bir Ronaldo editi",
+        description: "Muhteşem bir S7NSEIV editi",
         link: "https://www.youtube.com/watch?v=YoBcN-7ZdQs",
         thumbnail: "https://img.youtube.com/vi/YoBcN-7ZdQs/mqdefault.jpg"
     },
     {
-        title: "RONALDO EDIT 2",
+        title: "RONALDO ANGRY",
         video: "https://www.youtube.com/embed/DLRHDsdatMc?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
-        description: "Harika bir Ronadlo editi",
+        description: "Harika bir S7NSEIV editi",
         link: "https://www.youtube.com/watch?v=DLRHDsdatMc",
         thumbnail: "https://img.youtube.com/vi/DLRHDsdatMc/mqdefault.jpg"
     },
     {
-        title: "RONALDO EDIT 3",
+        title: "REAL MADRID BEAUTIFUL",
         video: "https://www.youtube.com/embed/OMODHFlw8Is?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
-        description: "Etkileyici bir Ronaldo editi",
+        description: "Etkileyici bir S7NSEIV editi",
         link: "https://www.youtube.com/watch?v=OMODHFlw8Is",
         thumbnail: "https://img.youtube.com/vi/OMODHFlw8Is/mqdefault.jpg"
     },
     {
-        title: "RONALDO EDIT 4",
-        video: "https://www.youtube.com/embed/7Ht9jkWxwUQ?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
-        description: "Efsanevi Ronaldo editi",
-        link: "https://www.youtube.com/watch?v=7Ht9jkWxwUQ",
-        thumbnail: "https://img.youtube.com/vi/7Ht9jkWxwUQ/mqdefault.jpg"
+        title: "RONALDO",
+        video: "https://www.youtube.com/embed/VjdvK97NiEM?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
+        description: "S7NSEIV'in Yeni Kısa Editi",
+        link: "https://www.youtube.com/shorts/VjdvK97NiEM",
+        thumbnail: "https://img.youtube.com/vi/VjdvK97NiEM/mqdefault.jpg"
     },
     {
-        title: "RONALDO EDIT 5",
-        video: "https://www.youtube.com/embed/9GvXKXq4QqY?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
-        description: "Büyüleyici Ronaldo editi",
-        link: "https://www.youtube.com/watch?v=9GvXKXq4QqY",
-        thumbnail: "https://img.youtube.com/vi/9GvXKXq4QqY/mqdefault.jpg"
+        title: "REAL MADRID CHAMPIONS",
+        video: "https://www.youtube.com/embed/-HbWOqnxcns?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
+        description: "S7NSEIV'in En Yeni Shorts Editi",
+        link: "https://www.youtube.com/shorts/-HbWOqnxcns",
+        thumbnail: "https://img.youtube.com/vi/-HbWOqnxcns/mqdefault.jpg"
     },
     {
-        title: "RONALDO EDIT 6",
-        video: "https://www.youtube.com/embed/3P1CnWI62Ik?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
-        description: "Unutulmaz Ronaldo editi",
-        link: "https://www.youtube.com/watch?v=3P1CnWI62Ik",
-        thumbnail: "https://img.youtube.com/vi/3P1CnWI62Ik/mqdefault.jpg"
+        title: "BALLON D'OR",
+        video: "https://www.youtube.com/embed/kqiQa1rXcr8?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
+        description: "S7NSEIV'in Efsane Anları",
+        link: "https://www.youtube.com/shorts/kqiQa1rXcr8",
+        thumbnail: "https://img.youtube.com/vi/kqiQa1rXcr8/mqdefault.jpg"
+    },
+    {
+        title: "FATIH TERIM REACTIONS",
+        video: "https://www.youtube.com/embed/P9St_ULxWcs?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
+        description: "İmparator'un Unutulmaz Anları",
+        link: "https://www.youtube.com/shorts/P9St_ULxWcs",
+        thumbnail: "https://img.youtube.com/vi/P9St_ULxWcs/mqdefault.jpg"
+    },
+    {
+        title: "S7NSEIV SHORTS",
+        video: "https://www.youtube.com/embed/S2vFaiscy1s?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
+        description: "S7NSEIV'in yeni shorts videosu",
+        link: "https://www.youtube.com/shorts/S2vFaiscy1s",
+        thumbnail: "https://img.youtube.com/vi/S2vFaiscy1s/mqdefault.jpg"
+    },
+    {
+        title: "ANCELOTTİ REACTİONS",
+        video: "https://www.youtube.com/embed/O2nG3YoCGKE?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
+        description: "Ronaldo'nun muhteşem performansı",
+        link: "https://www.youtube.com/shorts/O2nG3YoCGKE",
+        thumbnail: "https://img.youtube.com/vi/O2nG3YoCGKE/mqdefault.jpg"
     }
 ];
 
-// Editleri yükle (hem ana sayfa hem de videolar sayfası için)
-function loadEdits(showAll = false) {
+// Video modal elementi
+const videoModal = document.getElementById('videoModal');
+const videoModalTitle = document.getElementById('videoModalTitle');
+const videoModalIframe = document.getElementById('videoModalIframe');
+
+// Modal kapatıldığında videoyu durdur
+videoModal.addEventListener('hidden.bs.modal', () => {
+    videoModalIframe.src = '';
+});
+
+// Edit kartı oluştur
+function createEditCard(edit) {
+    const col = document.createElement('div');
+    col.className = 'col-md-4 mb-4';
+    
+    col.innerHTML = `
+        <div class="edit-card">
+            <div class="video-container">
+                <img src="${edit.thumbnail}" alt="${edit.title}" class="video-thumbnail">
+            </div>
+            <div class="edit-info">
+                <h3>${edit.title}</h3>
+                <p>${edit.description}</p>
+                <button class="btn-watch" onclick="openVideoModal('${edit.video}', '${edit.title}')">
+                    <i class="fas fa-play"></i> İzle
+                </button>
+            </div>
+        </div>
+    `;
+    
+    return col;
+}
+
+// Ana sayfadaki editleri yükle
+function loadEdits() {
     const container = document.getElementById('edits-container');
     if (!container) return;
-
+    
     container.innerHTML = '';
     
-    // Gösterilecek editleri belirle
-    const editsToShow = showAll ? edits : edits.slice(0, 3);
+    // Sadece ilk 3 edit'i göster
+    const firstThreeEdits = edits.slice(0, 3);
     
-    editsToShow.forEach(edit => {
-        const col = document.createElement('div');
-        col.className = 'col-md-4 mb-4';
-        
-        col.innerHTML = `
-            <div class="card bg-dark text-white h-100">
-                <img src="${edit.thumbnail}" class="card-img-top" alt="${edit.title}" style="height: 200px; object-fit: cover;">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">${edit.title}</h5>
-                    <p class="card-text">${edit.description}</p>
-                    <button class="btn btn-primary mt-auto w-100">İzle</button>
-                </div>
-            </div>
-        `;
-        
-        // Karta tıklandığında modalı aç
-        col.querySelector('.btn').addEventListener('click', () => {
-            const videoModal = document.getElementById('videoModal');
-            const videoModalTitle = document.getElementById('videoModalTitle');
-            const videoModalIframe = document.getElementById('videoModalIframe');
-            
-            videoModalTitle.textContent = edit.title;
-            videoModalIframe.src = edit.video;
-            new bootstrap.Modal(videoModal).show();
-        });
-        
-        container.appendChild(col);
+    firstThreeEdits.forEach(edit => {
+        container.appendChild(createEditCard(edit));
     });
 
-    // Ana sayfada "Daha Fazla" butonu ekle
-    if (!showAll && edits.length > 3) {
+    // "Daha Fazla" butonu ekle
+    if (edits.length > 3) {
         const moreButton = document.createElement('div');
         moreButton.className = 'col-12 text-center mt-4';
         moreButton.innerHTML = `
@@ -96,13 +125,43 @@ function loadEdits(showAll = false) {
     }
 }
 
-// Modal kapatıldığında videoyu durdur
-document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
-    document.getElementById('videoModalIframe').src = '';
-});
+// Tüm editleri yükle
+function loadAllEdits() {
+    const container = document.getElementById('edits-container');
+    if (!container) return;
+    
+    container.innerHTML = '';
+    
+    edits.forEach(edit => {
+        container.appendChild(createEditCard(edit));
+    });
+}
+
+// Video modalını aç
+function openVideoModal(videoUrl, title) {
+    videoModalTitle.textContent = title;
+    videoModalIframe.src = videoUrl;
+    new bootstrap.Modal(videoModal).show();
+}
 
 // Sayfa yüklendiğinde uygun fonksiyonu çağır
 document.addEventListener('DOMContentLoaded', () => {
-    const isVideosPage = window.location.pathname.includes('videos.html');
-    loadEdits(isVideosPage);
+    if (window.location.pathname.includes('videos.html')) {
+        loadAllEdits();
+    } else {
+        loadEdits();
+    }
 });
+
+// Her 5 saniyede bir kontrol et
+setInterval(() => {
+    const container = document.getElementById('edits-container');
+    
+    if (container && container.children.length === 0) {
+        if (window.location.pathname.includes('videos.html')) {
+            loadAllEdits();
+        } else {
+            loadEdits();
+        }
+    }
+}, 5000); 
