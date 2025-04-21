@@ -1,60 +1,35 @@
-/* Reset ve Genel Stiller */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Genel stiller */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #1a1a1a;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
     color: #fff;
     line-height: 1.6;
-    min-height: 100vh;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Navbar */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: rgba(0, 0, 0, 0.9) !important;
-    padding: 1rem 0;
+    background: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar-brand {
-    font-size: 1.5rem;
     font-weight: bold;
-    color: #fff !important;
+    letter-spacing: 1px;
 }
 
-.nav-link {
-    color: rgba(255, 255, 255, 0.8) !important;
-    transition: color 0.3s ease;
-    padding: 0.5rem 1rem;
-}
-
-.nav-link:hover,
-.nav-link.active {
-    color: #fff !important;
-}
-
-/* Hero Section */
+/* Hero section */
 .hero {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    background: url('https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt1a45d6f4ae0f3d3f/60db790b47339c0fc9df4f1b/3d4b0e9a6c2435e3a0049bc8e72f8a766c42d84b.jpg') center/cover no-repeat fixed;
+    background-image: url('https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt1a45d6f4ae0f3d3f/60db790b47339c0fc9df4f1b/3d4b0e9a6c2435e3a0049bc8e72f8a766c42d84b.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 20px;
-    margin: 0;
+    position: relative;
+    padding: 4rem 0;
 }
 
 .hero::before {
@@ -64,143 +39,87 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.6);
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
-    max-width: 800px;
-    width: 100%;
-    padding: 2rem;
+    z-index: 1;
 }
 
 .hero h1 {
-    font-size: 4rem;
-    font-weight: 700;
+    font-size: 3.5rem;
+    font-weight: bold;
     margin-bottom: 1rem;
-    color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    letter-spacing: 2px;
 }
 
 .hero p {
     font-size: 1.5rem;
-    color: #fff;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* Featured Edits Section */
-.featured-edits {
-    background: #1a1a1a;
-    padding: 4rem 0;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 3rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Edit Cards */
-.edit-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
+/* Kart tasarımı */
+.card {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.edit-card:hover {
+.card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.edit-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+.card-img-top {
     transition: transform 0.3s ease;
 }
 
-.edit-card:hover img {
+.card:hover .card-img-top {
     transform: scale(1.05);
 }
 
-.edit-card .card-body {
+.card-body {
     padding: 1.5rem;
 }
 
-.edit-card h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
     margin-bottom: 1rem;
-    color: #fff;
 }
 
-.edit-card p {
+.card-text {
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: 1.5rem;
-    font-size: 1rem;
-    line-height: 1.6;
 }
 
-.watch-btn {
-    display: inline-block;
-    background: #ff4d4d;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: all 0.3s ease;
+.btn-primary {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
     border: none;
-    cursor: pointer;
-    width: 100%;
-    text-align: center;
-    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.watch-btn:hover {
-    background: #ff3333;
-    transform: scale(1.05);
-    color: #fff;
-    text-decoration: none;
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
 }
 
-/* Video Modal */
+/* Modal tasarımı */
 .modal-content {
-    background: #1a1a1a;
-    border: none;
-    border-radius: 15px;
-    overflow: hidden;
+    background: #1a1a1a !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .modal-header {
-    border-bottom: none;
-    padding: 1.5rem;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.modal-title {
-    color: #fff;
-    font-weight: 600;
-}
-
-.btn-close {
-    filter: invert(1) grayscale(100%) brightness(200%);
-    opacity: 0.8;
-}
-
-.btn-close:hover {
-    opacity: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .video-modal-container {
@@ -217,83 +136,70 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    border: none;
 }
 
 /* Footer */
 footer {
-    background: rgba(0, 0, 0, 0.9);
-    color: rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 0.8);
     padding: 2rem 0;
+    margin-top: 4rem;
     text-align: center;
-    position: relative;
-    z-index: 10;
+    color: rgba(255, 255, 255, 0.8);
 }
 
-/* Responsive Styles */
+/* Responsive tasarım */
 @media (max-width: 768px) {
-    .navbar {
-        background: rgba(0, 0, 0, 0.95) !important;
-    }
-
-    .hero {
-        height: 100vh;
-        background-attachment: scroll;
-    }
-
     .hero h1 {
         font-size: 2.5rem;
-        margin-bottom: 0.5rem;
     }
 
     .hero p {
         font-size: 1.2rem;
-        margin-bottom: 1.5rem;
     }
 
-    .section-title {
-        font-size: 2rem;
+    .card {
         margin-bottom: 2rem;
-    }
-
-    .edit-card {
-        margin-bottom: 1.5rem;
-    }
-
-    .edit-card img {
-        height: 180px;
-    }
-
-    .edit-card h3 {
-        font-size: 1.3rem;
-    }
-
-    .watch-btn {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
     }
 }
 
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
+/* Video Table Styles */
+.table {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 2rem;
+}
 
-    .hero p {
-        font-size: 1rem;
-    }
+.table th {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-weight: 600;
+    border: none;
+}
 
-    .section-title {
-        font-size: 1.75rem;
-    }
+.table td {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.1);
+    vertical-align: middle;
+}
 
-    .edit-card img {
-        height: 160px;
-    }
+.table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.table-thumbnail {
+    width: 100px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 /* Main Content Padding */
 .main-content {
-    padding-top: 5rem;
+    padding-top: 6rem;
     padding-bottom: 3rem;
 }
