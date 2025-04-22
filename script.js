@@ -3,23 +3,23 @@ const edits = [
     {
         id: 1,
         title: "REAL MADRID",
-        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_1",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         description: "Muhteşem bir S7NSEİV editi",
-        thumbnail: "thumbnails/edit1.jpg"
+        thumbnail: "https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg"
     },
     {
         id: 2,
         title: "RONALDO ANGRY",
-        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_2",
+        videoUrl: "https://www.youtube.com/embed/jNQXAC9IVRw",
         description: "Harika bir S7NSEİV editi",
-        thumbnail: "thumbnails/edit2.jpg"
+        thumbnail: "https://i.ytimg.com/vi/jNQXAC9IVRw/maxresdefault.jpg"
     },
     {
         id: 3,
         title: "REAL MADRID BEAUTIFUL",
-        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_3",
+        videoUrl: "https://www.youtube.com/embed/M7FIvfx5J10",
         description: "Etkileyici bir S7NSEİV editi",
-        thumbnail: "thumbnails/edit3.jpg"
+        thumbnail: "https://i.ytimg.com/vi/M7FIvfx5J10/maxresdefault.jpg"
     }
 ];
 
@@ -112,4 +112,4 @@ function loadEditsTable() {
 document.addEventListener('DOMContentLoaded', () => {
     loadFeaturedEdits();
     loadEditsTable();
-});
+}); 
