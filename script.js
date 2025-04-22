@@ -2,24 +2,24 @@
 const edits = [
     {
         id: 1,
-        title: "S7NSEİV - Muhteşem Edit",
-        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_1",
-        description: "En yeni ve en iyi editlerden biri. Özel efektler ve müzik seçimiyle dikkat çeken bir çalışma.",
-        thumbnail: "images/thumbnail1.jpg"
+        title: "Real Madrid - Muhteşem Edit",
+        videoUrl: "https://www.youtube.com/embed/YoBcN-7ZdQs",
+        description: "Real Madrid'in en etkileyici anlarının derlemesi. Özel efektler ve müzik seçimiyle dikkat çeken bir çalışma.",
+        thumbnail: "https://i.ytimg.com/vi/YoBcN-7ZdQs/maxresdefault.jpg"
     },
     {
         id: 2,
-        title: "S7NSEİV - Özel Performans",
-        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_2",
-        description: "Benzersiz bir performans sergileyen muhteşem anların derlemesi.",
-        thumbnail: "images/thumbnail2.jpg"
+        title: "Ronaldo - Öfkeli Anlar",
+        videoUrl: "https://www.youtube.com/embed/DLRHDsdatMc",
+        description: "Ronaldo'nun saha içindeki en öfkeli ve etkileyici anlarının derlemesi. Güçlü performans ve karakter.",
+        thumbnail: "https://i.ytimg.com/vi/DLRHDsdatMc/maxresdefault.jpg"
     },
     {
         id: 3,
-        title: "S7NSEİV - Klasik Anlar",
-        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_3",
-        description: "Unutulmaz anların özel bir derlemesi. En iyi performanslar ve özel efektler.",
-        thumbnail: "images/thumbnail3.jpg"
+        title: "Real Madrid - Güzel Anlar",
+        videoUrl: "https://www.youtube.com/embed/OMODHFlw8Is",
+        description: "Real Madrid'in en güzel ve unutulmaz anlarının derlemesi. Efsanevi performanslar ve özel efektler.",
+        thumbnail: "https://i.ytimg.com/vi/OMODHFlw8Is/maxresdefault.jpg"
     }
 ];
 
@@ -107,4 +107,4 @@ document.addEventListener('DOMContentLoaded', () => {
     loadFeaturedEdits();
     loadEditsTable();
     setupVideoModal();
-});
+}); 
