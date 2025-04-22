@@ -2,87 +2,109 @@
 const edits = [
     {
         id: 1,
-        title: "RONALDO - GOAT",
-        videoUrl: "https://www.youtube.com/embed/YoBcN-7ZdQs",
-        description: "Muhteşem bir S7NSEİV editi",
-        thumbnail: "https://i.ytimg.com/vi/YoBcN-7ZdQs/maxresdefault.jpg"
+        title: "S7NSEİV - Muhteşem Edit",
+        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_1",
+        description: "En yeni ve en iyi editlerden biri. Özel efektler ve müzik seçimiyle dikkat çeken bir çalışma.",
+        thumbnail: "images/thumbnail1.jpg"
     },
     {
         id: 2,
-        title: "RONALDO - LEGEND",
-        videoUrl: "https://www.youtube.com/embed/DLRHDsdatMc",
-        description: "Harika bir S7NSEİV editi",
-        thumbnail: "https://i.ytimg.com/vi/DLRHDsdatMc/maxresdefault.jpg"
+        title: "S7NSEİV - Özel Performans",
+        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_2",
+        description: "Benzersiz bir performans sergileyen muhteşem anların derlemesi.",
+        thumbnail: "images/thumbnail2.jpg"
     },
     {
         id: 3,
-        title: "RONALDO - KING",
-        videoUrl: "https://www.youtube.com/embed/OMODHFlw8Is",
-        description: "Etkileyici bir S7NSEİV editi",
-        thumbnail: "https://i.ytimg.com/vi/OMODHFlw8Is/maxresdefault.jpg"
-    },
-    {
-        id: 4,
-        title: "RONALDO - SKILLS",
-        videoUrl: "https://www.youtube.com/embed/YoBcN-7ZdQs",
-        description: "Yeni bir S7NSEİV editi",
-        thumbnail: "https://i.ytimg.com/vi/YoBcN-7ZdQs/maxresdefault.jpg"
-    },
-    {
-        id: 5,
-        title: "RONALDO - GOALS",
-        videoUrl: "https://www.youtube.com/embed/DLRHDsdatMc",
-        description: "Özel bir S7NSEİV editi",
-        thumbnail: "https://i.ytimg.com/vi/DLRHDsdatMc/maxresdefault.jpg"
-    },
-    {
-        id: 6,
-        title: "RONALDO - BEST",
-        videoUrl: "https://www.youtube.com/embed/OMODHFlw8Is",
-        description: "Benzersiz bir S7NSEİV editi",
-        thumbnail: "https://i.ytimg.com/vi/OMODHFlw8Is/maxresdefault.jpg"
+        title: "S7NSEİV - Klasik Anlar",
+        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_3",
+        description: "Unutulmaz anların özel bir derlemesi. En iyi performanslar ve özel efektler.",
+        thumbnail: "images/thumbnail3.jpg"
     }
 ];
 
 // Ana sayfadaki öne çıkan editleri yükle
 function loadFeaturedEdits() {
-    const container = document.getElementById('edits-container');
+    const container = document.getElementById('featuredEdits');
     if (!container) return;
 
     // İlk 3 editi göster
     edits.slice(0, 3).forEach(edit => {
-        const col = document.createElement('div');
-        col.className = 'col-md-4';
-        col.innerHTML = `
-            <div class="edit-card">
-                <img src="${edit.thumbnail}" alt="${edit.title}">
+        const card = document.createElement('div');
+        card.className = 'col-md-4 mb-4';
+        card.innerHTML = `
+            <div class="card h-100">
+                <img src="${edit.thumbnail}" class="card-img-top" alt="${edit.title}">
                 <div class="card-body">
-                    <h3>${edit.title}</h3>
-                    <p>${edit.description}</p>
-                    <button class="watch-btn" data-video-url="${edit.videoUrl}" data-video-title="${edit.title}">
+                    <h5 class="card-title">${edit.title}</h5>
+                    <p class="card-text">${edit.description}</p>
+                    <button class="btn btn-primary watch-video" data-video-url="${edit.videoUrl}" 
+                            data-video-title="${edit.title}">
                         İzle
                     </button>
                 </div>
             </div>
         `;
-        container.appendChild(col);
+        container.appendChild(card);
+    });
+}
+
+// Videolar sayfasındaki tabloyu yükle
+function loadEditsTable() {
+    const tableBody = document.getElementById('editsTableBody');
+    if (!tableBody) return;
+
+    edits.forEach((edit, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>
+                <img src="${edit.thumbnail}" alt="${edit.title}" class="table-thumbnail">
+            </td>
+            <td>${edit.title}</td>
+            <td>${edit.description}</td>
+            <td>
+                <button class="btn btn-primary watch-video" data-video-url="${edit.videoUrl}" 
+                        data-video-title="${edit.title}">
+                    İzle
+                </button>
+            </td>
+        `;
+        tableBody.appendChild(row);
+    });
+}
+
+// Video modalını ayarla
+function setupVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const modalTitle = document.getElementById('videoModalTitle');
+    const modalIframe = document.getElementById('videoModalIframe');
+    
+    if (!modal || !modalTitle || !modalIframe) return;
+
+    // Modal kapatıldığında videoyu durdur
+    modal.addEventListener('hidden.bs.modal', () => {
+        modalIframe.src = '';
     });
 
-    // Daha fazla butonu ekle
-    const moreCol = document.createElement('div');
-    moreCol.className = 'col-12 text-center mt-4';
-    moreCol.innerHTML = `
-        <a href="videos.html" class="more-btn">Daha Fazla Edit</a>
-    `;
-    container.appendChild(moreCol);
-
-    // Video izleme butonlarına tıklama olayı ekle
-    const watchButtons = document.querySelectorAll('.watch-btn');
-    watchButtons.forEach(button => {
+    // Tüm video butonlarına tıklama olayı ekle
+    document.querySelectorAll('.watch-video').forEach(button => {
         button.addEventListener('click', () => {
             const videoUrl = button.dataset.videoUrl;
             const videoTitle = button.dataset.videoTitle;
-            openVideoModal(videoUrl, videoTitle);
+            
+            modalTitle.textContent = videoTitle;
+            modalIframe.src = videoUrl;
+            
+            // Bootstrap 5 modal'ı aç
+            const modalInstance = new bootstrap.Modal(modal);
+            modalInstance.show();
         });
     });
 }
+
+// Sayfa yüklendiğinde
+document.addEventListener('DOMContentLoaded', () => {
+    loadFeaturedEdits();
+    loadEditsTable();
+    setupVideoModal();
+});
