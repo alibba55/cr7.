@@ -2,24 +2,45 @@
 const edits = [
     {
         id: 1,
-        title: "REAL MADRID",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        title: "RONALDO - GOAT",
+        videoUrl: "https://www.youtube.com/embed/YoBcN-7ZdQs",
         description: "Muhteşem bir S7NSEİV editi",
-        thumbnail: "https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg"
+        thumbnail: "https://i.ytimg.com/vi/YoBcN-7ZdQs/maxresdefault.jpg"
     },
     {
         id: 2,
-        title: "RONALDO ANGRY",
-        videoUrl: "https://www.youtube.com/embed/jNQXAC9IVRw",
+        title: "RONALDO - LEGEND",
+        videoUrl: "https://www.youtube.com/embed/DLRHDsdatMc",
         description: "Harika bir S7NSEİV editi",
-        thumbnail: "https://i.ytimg.com/vi/jNQXAC9IVRw/maxresdefault.jpg"
+        thumbnail: "https://i.ytimg.com/vi/DLRHDsdatMc/maxresdefault.jpg"
     },
     {
         id: 3,
-        title: "REAL MADRID BEAUTIFUL",
-        videoUrl: "https://www.youtube.com/embed/M7FIvfx5J10",
+        title: "RONALDO - KING",
+        videoUrl: "https://www.youtube.com/embed/OMODHFlw8Is",
         description: "Etkileyici bir S7NSEİV editi",
-        thumbnail: "https://i.ytimg.com/vi/M7FIvfx5J10/maxresdefault.jpg"
+        thumbnail: "https://i.ytimg.com/vi/OMODHFlw8Is/maxresdefault.jpg"
+    },
+    {
+        id: 4,
+        title: "RONALDO - SKILLS",
+        videoUrl: "https://www.youtube.com/embed/YoBcN-7ZdQs",
+        description: "Yeni bir S7NSEİV editi",
+        thumbnail: "https://i.ytimg.com/vi/YoBcN-7ZdQs/maxresdefault.jpg"
+    },
+    {
+        id: 5,
+        title: "RONALDO - GOALS",
+        videoUrl: "https://www.youtube.com/embed/DLRHDsdatMc",
+        description: "Özel bir S7NSEİV editi",
+        thumbnail: "https://i.ytimg.com/vi/DLRHDsdatMc/maxresdefault.jpg"
+    },
+    {
+        id: 6,
+        title: "RONALDO - BEST",
+        videoUrl: "https://www.youtube.com/embed/OMODHFlw8Is",
+        description: "Benzersiz bir S7NSEİV editi",
+        thumbnail: "https://i.ytimg.com/vi/OMODHFlw8Is/maxresdefault.jpg"
     }
 ];
 
@@ -28,7 +49,8 @@ function loadFeaturedEdits() {
     const container = document.getElementById('edits-container');
     if (!container) return;
 
-    edits.forEach(edit => {
+    // İlk 3 editi göster
+    edits.slice(0, 3).forEach(edit => {
         const col = document.createElement('div');
         col.className = 'col-md-4';
         col.innerHTML = `
@@ -46,6 +68,14 @@ function loadFeaturedEdits() {
         container.appendChild(col);
     });
 
+    // Daha fazla butonu ekle
+    const moreCol = document.createElement('div');
+    moreCol.className = 'col-12 text-center mt-4';
+    moreCol.innerHTML = `
+        <a href="videos.html" class="more-btn">Daha Fazla Edit</a>
+    `;
+    container.appendChild(moreCol);
+
     // Video izleme butonlarına tıklama olayı ekle
     const watchButtons = document.querySelectorAll('.watch-btn');
     watchButtons.forEach(button => {
@@ -56,60 +86,3 @@ function loadFeaturedEdits() {
         });
     });
 }
-
-// Video modalını aç
-function openVideoModal(videoUrl, videoTitle) {
-    const modal = document.getElementById('videoModal');
-    const modalTitle = document.getElementById('videoModalTitle');
-    const modalIframe = document.getElementById('videoModalIframe');
-    
-    modalTitle.textContent = videoTitle;
-    modalIframe.src = videoUrl;
-    
-    const bootstrapModal = new bootstrap.Modal(modal);
-    bootstrapModal.show();
-    
-    // Modal kapandığında videoyu durdur
-    modal.addEventListener('hidden.bs.modal', () => {
-        modalIframe.src = '';
-    });
-}
-
-// Videolar sayfasındaki tabloyu yükle
-function loadEditsTable() {
-    const tableBody = document.getElementById('editsTableBody');
-    if (!tableBody) return;
-
-    edits.forEach(edit => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>
-                <img src="${edit.thumbnail}" alt="${edit.title}" class="table-thumbnail">
-            </td>
-            <td>${edit.title}</td>
-            <td>${edit.description}</td>
-            <td>
-                <button class="watch-btn" data-video-url="${edit.videoUrl}" data-video-title="${edit.title}">
-                    İzle
-                </button>
-            </td>
-        `;
-        tableBody.appendChild(row);
-    });
-
-    // Tablo video butonlarına tıklama olayı ekle
-    const watchButtons = document.querySelectorAll('.watch-btn');
-    watchButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const videoUrl = button.dataset.videoUrl;
-            const videoTitle = button.dataset.videoTitle;
-            openVideoModal(videoUrl, videoTitle);
-        });
-    });
-}
-
-// Sayfa yüklendiğinde
-document.addEventListener('DOMContentLoaded', () => {
-    loadFeaturedEdits();
-    loadEditsTable();
-});
