@@ -4,21 +4,18 @@ const edits = [
         id: 1,
         title: "Real Madrid - Muhteşem Edit",
         videoUrl: "https://www.youtube.com/embed/YoBcN-7ZdQs",
-        description: "Real Madrid'in en etkileyici anlarının derlemesi. Özel efektler ve müzik seçimiyle dikkat çeken bir çalışma.",
         thumbnail: "https://i.ytimg.com/vi/YoBcN-7ZdQs/maxresdefault.jpg"
     },
     {
         id: 2,
         title: "Ronaldo - Öfkeli Anlar",
         videoUrl: "https://www.youtube.com/embed/DLRHDsdatMc",
-        description: "Ronaldo'nun saha içindeki en öfkeli ve etkileyici anlarının derlemesi. Güçlü performans ve karakter.",
         thumbnail: "https://i.ytimg.com/vi/DLRHDsdatMc/maxresdefault.jpg"
     },
     {
         id: 3,
         title: "Real Madrid - Güzel Anlar",
         videoUrl: "https://www.youtube.com/embed/OMODHFlw8Is",
-        description: "Real Madrid'in en güzel ve unutulmaz anlarının derlemesi. Efsanevi performanslar ve özel efektler.",
         thumbnail: "https://i.ytimg.com/vi/OMODHFlw8Is/maxresdefault.jpg"
     }
 ];
@@ -44,7 +41,6 @@ function loadFeaturedEdits() {
                      onerror="this.src='https://via.placeholder.com/400x225?text=Video+Thumbnail'">
                 <div class="card-body">
                     <h5 class="card-title">${edit.title}</h5>
-                    <p class="card-text">${edit.description}</p>
                     <button class="btn btn-primary watch-video" data-video-url="${edit.videoUrl}" 
                             data-video-title="${edit.title}">
                         İzle
@@ -75,7 +71,6 @@ function loadEditsTable() {
                      onerror="this.src='https://via.placeholder.com/100x60?text=Thumbnail'">
             </td>
             <td>${edit.title}</td>
-            <td>${edit.description}</td>
             <td>
                 <button class="btn btn-primary watch-video" data-video-url="${edit.videoUrl}" 
                         data-video-title="${edit.title}">
