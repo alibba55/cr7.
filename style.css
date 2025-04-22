@@ -176,40 +176,6 @@ body {
     color: #fff;
 }
 
-/* Main Content */
-.main-content {
-    padding-top: 6rem;
-    padding-bottom: 3rem;
-}
-
-/* Table Styles */
-.table {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    overflow: hidden;
-    margin-top: 2rem;
-}
-
-.table th {
-    background: rgba(0, 0, 0, 0.3);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    padding: 1rem;
-}
-
-.table td {
-    border-color: rgba(255, 255, 255, 0.1);
-    vertical-align: middle;
-    padding: 1rem;
-}
-
-.table-thumbnail {
-    width: 100px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
 /* Footer */
 footer {
     background: rgba(0, 0, 0, 0.8);
@@ -219,6 +185,28 @@ footer {
     position: relative;
     z-index: 10;
     margin-top: 4rem;
+}
+
+.more-btn {
+    display: inline-block;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.more-btn:hover {
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -235,9 +223,4 @@ footer {
     .edit-card img {
         height: 180px;
     }
-
-    .table-thumbnail {
-        width: 80px;
-        height: 48px;
-    }
-}
+} 
