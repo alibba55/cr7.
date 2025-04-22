@@ -25,7 +25,7 @@ const edits = [
 
 // Ana sayfadaki öne çıkan editleri yükle
 function loadFeaturedEdits() {
-    const container = document.getElementById('featuredEdits');
+    const container = document.getElementById('edits-container');
     if (!container) return;
 
     // İlk 3 editi göster
@@ -107,4 +107,4 @@ document.addEventListener('DOMContentLoaded', () => {
     loadFeaturedEdits();
     loadEditsTable();
     setupVideoModal();
-}); 
+});
