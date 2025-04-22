@@ -26,7 +26,13 @@ const edits = [
 // Ana sayfadaki öne çıkan editleri yükle
 function loadFeaturedEdits() {
     const container = document.getElementById('edits-container');
-    if (!container) return;
+    if (!container) {
+        console.error('Edits container not found!');
+        return;
+    }
+
+    // Container'ı temizle
+    container.innerHTML = '';
 
     // İlk 3 editi göster
     edits.slice(0, 3).forEach(edit => {
@@ -34,7 +40,8 @@ function loadFeaturedEdits() {
         card.className = 'col-md-4 mb-4';
         card.innerHTML = `
             <div class="card h-100">
-                <img src="${edit.thumbnail}" class="card-img-top" alt="${edit.title}">
+                <img src="${edit.thumbnail}" class="card-img-top" alt="${edit.title}" 
+                     onerror="this.src='https://via.placeholder.com/400x225?text=Video+Thumbnail'">
                 <div class="card-body">
                     <h5 class="card-title">${edit.title}</h5>
                     <p class="card-text">${edit.description}</p>
@@ -52,13 +59,20 @@ function loadFeaturedEdits() {
 // Videolar sayfasındaki tabloyu yükle
 function loadEditsTable() {
     const tableBody = document.getElementById('editsTableBody');
-    if (!tableBody) return;
+    if (!tableBody) {
+        console.error('Edits table body not found!');
+        return;
+    }
+
+    // Tabloyu temizle
+    tableBody.innerHTML = '';
 
     edits.forEach((edit, index) => {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>
-                <img src="${edit.thumbnail}" alt="${edit.title}" class="table-thumbnail">
+                <img src="${edit.thumbnail}" alt="${edit.title}" class="table-thumbnail"
+                     onerror="this.src='https://via.placeholder.com/100x60?text=Thumbnail'">
             </td>
             <td>${edit.title}</td>
             <td>${edit.description}</td>
@@ -79,7 +93,10 @@ function setupVideoModal() {
     const modalTitle = document.getElementById('videoModalTitle');
     const modalIframe = document.getElementById('videoModalIframe');
     
-    if (!modal || !modalTitle || !modalIframe) return;
+    if (!modal || !modalTitle || !modalIframe) {
+        console.error('Video modal elements not found!');
+        return;
+    }
 
     // Modal kapatıldığında videoyu durdur
     modal.addEventListener('hidden.bs.modal', () => {
@@ -104,7 +121,8 @@ function setupVideoModal() {
 
 // Sayfa yüklendiğinde
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded, initializing...');
     loadFeaturedEdits();
     loadEditsTable();
     setupVideoModal();
-});
+}); 
