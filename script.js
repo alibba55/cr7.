@@ -2,21 +2,39 @@
 const edits = [
     {
         id: 1,
-        title: "Ronaldo - The GOAT",
-        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_1",
-        thumbnail: "https://i.ytimg.com/vi/VIDEO_ID_1/maxresdefault.jpg"
+        title: "RONALDO EDIT 1",
+        videoUrl: "https://www.youtube.com/embed/YoBcN-7ZdQs?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
+        thumbnail: "https://img.youtube.com/vi/YoBcN-7ZdQs/maxresdefault.jpg"
     },
     {
         id: 2,
-        title: "Ronaldo Skills 2024",
-        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_2",
-        thumbnail: "https://i.ytimg.com/vi/VIDEO_ID_2/maxresdefault.jpg"
+        title: "RONALDO EDIT 2",
+        videoUrl: "https://www.youtube.com/embed/DLRHDsdatMc?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
+        thumbnail: "https://img.youtube.com/vi/DLRHDsdatMc/maxresdefault.jpg"
     },
     {
         id: 3,
-        title: "Ronaldo Goals Compilation",
-        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_3",
-        thumbnail: "https://i.ytimg.com/vi/VIDEO_ID_3/maxresdefault.jpg"
+        title: "RONALDO EDIT 3",
+        videoUrl: "https://www.youtube.com/embed/OMODHFlw8Is?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
+        thumbnail: "https://img.youtube.com/vi/OMODHFlw8Is/maxresdefault.jpg"
+    },
+    {
+        id: 4,
+        title: "RONALDO EDIT 4",
+        videoUrl: "https://www.youtube.com/embed/7Ht9jkWxwUQ?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
+        thumbnail: "https://img.youtube.com/vi/7Ht9jkWxwUQ/maxresdefault.jpg"
+    },
+    {
+        id: 5,
+        title: "RONALDO EDIT 5",
+        videoUrl: "https://www.youtube.com/embed/9GvXKXq4QqY?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
+        thumbnail: "https://img.youtube.com/vi/9GvXKXq4QqY/maxresdefault.jpg"
+    },
+    {
+        id: 6,
+        title: "RONALDO EDIT 6",
+        videoUrl: "https://www.youtube.com/embed/3P1CnWI62Ik?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
+        thumbnail: "https://img.youtube.com/vi/3P1CnWI62Ik/maxresdefault.jpg"
     }
 ];
 
@@ -55,7 +73,7 @@ function loadFeaturedEdits() {
 
         col.querySelector('.edit-card').addEventListener('click', () => {
             videoModalTitle.textContent = edit.title;
-            videoModalIframe.src = edit.videoUrl; // videoUrl olarak güncellendi
+            videoModalIframe.src = edit.videoUrl;
             new bootstrap.Modal(videoModal).show();
         });
 
@@ -99,14 +117,13 @@ function loadAllEdits() {
 
         col.querySelector('.edit-card').addEventListener('click', () => {
             videoModalTitle.textContent = edit.title;
-            videoModalIframe.src = edit.videoUrl; // videoUrl olarak güncellendi
+            videoModalIframe.src = edit.videoUrl;
             new bootstrap.Modal(videoModal).show();
         });
 
         editsContainer.appendChild(col);
     });
 }
-
 
 // Sayfa yüklendiğinde
 document.addEventListener('DOMContentLoaded', function() {
@@ -116,5 +133,3 @@ document.addEventListener('DOMContentLoaded', function() {
         loadFeaturedEdits();
     }
 });
-
-// Her 5 saniyede bir kontrol etme kısmı gereksiz, kaldırıldı.
