@@ -112,4 +112,4 @@ function loadEditsTable() {
 document.addEventListener('DOMContentLoaded', () => {
     loadFeaturedEdits();
     loadEditsTable();
-}); 
+});
