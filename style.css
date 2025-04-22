@@ -2,8 +2,22 @@ body {
     background-color: #000;
     color: #fff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
 }
 
+/* Navbar */
+.navbar {
+    background: rgba(0,0,0,0.8) !important;
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+/* Hero Section */
 .hero-section {
     position: relative;
     width: 100%;
@@ -50,31 +64,26 @@ body {
     color: rgba(255,255,255,0.9);
 }
 
-.navbar {
-    background: rgba(0,0,0,0.8) !important;
-    backdrop-filter: blur(10px);
-}
-
-.navbar-brand {
-    font-weight: 600;
-    font-size: 1.5rem;
-}
-
+/* Edit Cards */
 .edit-card {
     background: rgba(255,255,255,0.05);
     border-radius: 15px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    cursor: pointer;
 }
 
 .edit-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    background: rgba(255,255,255,0.1);
 }
 
 .video-container {
     position: relative;
     padding-top: 56.25%;
+    overflow: hidden;
 }
 
 .video-thumbnail {
@@ -98,16 +107,37 @@ body {
     color: #fff;
 }
 
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.5rem;
-    }
-    
-    .hero-description {
-        font-size: 1rem;
-    }
+/* Modal */
+.modal-content {
+    background: #1a1a1a;
+    border: none;
+    border-radius: 15px;
 }
 
+.modal-header {
+    border: none;
+    padding: 1.5rem;
+}
+
+.video-modal-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.video-modal-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Footer */
 footer {
     background: rgba(0,0,0,0.8);
     padding: 20px 0;
@@ -119,4 +149,19 @@ footer {
 footer p {
     margin: 0;
     color: rgba(255,255,255,0.7);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .edit-info h3 {
+        font-size: 1rem;
+    }
 }
