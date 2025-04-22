@@ -1,61 +1,71 @@
-/* Reset ve Genel Stiller */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Genel Stiller */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #0a0a0a;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
     color: #fff;
-    line-height: 1.6;
     min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Navbar */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: rgba(0, 0, 0, 0.8) !important;
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(15px);
+    padding: 1rem 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff !important;
+    font-weight: 700;
+    font-size: 1.8rem;
     letter-spacing: 1px;
+    background: linear-gradient(45deg, #fff, #aaa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
 }
 
 .nav-link {
-    color: rgba(255, 255, 255, 0.8) !important;
-    transition: color 0.3s ease;
-    padding: 0.5rem 1rem;
+    color: #fff !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    margin: 0 0.5rem;
+    position: relative;
+    transition: all 0.3s ease;
 }
 
-.nav-link:hover {
-    color: #fff !important;
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(45deg, #fff, #aaa);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 100%;
 }
 
 /* Hero Section */
 .hero {
-    height: 100vh;
-    width: 100%;
-    background-image: url('https://www.cristianoronaldo.com/assets/images/brand_image.jpg');
+    background-image: url('images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
-    min-height: 60vh;
+    background-attachment: fixed;
+    height: 70vh;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    position: relative;
-    padding: 4rem 0;
+    overflow: hidden;
 }
 
 .hero::before {
@@ -65,106 +75,156 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%);
+    backdrop-filter: blur(10px);
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
     max-width: 800px;
-    width: 100%;
-    padding: 2rem;
+    padding: 3rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(0);
+    transition: all 0.5s ease;
+}
+
+.hero:hover .hero-content {
+    transform: translateY(-10px);
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: #fff;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(45deg, #fff, #aaa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero p {
     font-size: 1.5rem;
-    color: #fff;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    margin-bottom: 2rem;
+    opacity: 0.9;
+    line-height: 1.6;
 }
 
-/* Edit Cards */
-.edit-card {
+/* Kartlar */
+.card {
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
+    border: none;
+    border-radius: 15px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.edit-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
-.edit-card img {
-    width: 100%;
+.card-img-top {
     height: 200px;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-.edit-card:hover img {
+.card:hover .card-img-top {
     transform: scale(1.05);
 }
 
-.edit-card .card-body {
+.card-body {
     padding: 1.5rem;
 }
 
-.edit-card h3 {
+.card-title {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
     color: #fff;
 }
 
-.edit-card p {
-    color: rgba(255, 255, 255, 0.8);
+.card-text {
+    color: #aaa;
     margin-bottom: 1.5rem;
-    font-size: 1rem;
-    line-height: 1.6;
 }
 
-.watch-btn {
-    display: inline-block;
-    background: #1a1a1a;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: all 0.3s ease;
+.btn-primary {
+    background: linear-gradient(45deg, #007bff, #0056b3);
     border: none;
-    cursor: pointer;
-    width: 100%;
-    text-align: center;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
     font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-.watch-btn:hover {
-    background: #333;
-    color: #fff;
-    text-decoration: none;
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
 }
 
-/* Video Modal */
-.modal-content {
-    background: #1a1a1a !important;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+/* Tablo Stilleri */
+.table {
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.table thead th {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 1.2rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.table tbody td {
+    border-color: rgba(255, 255, 255, 0.1);
+    padding: 1.2rem;
+    vertical-align: middle;
+    color: #fff;
+}
+
+.table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.table-thumbnail {
+    width: 100px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.table tbody tr:hover .table-thumbnail {
+    transform: scale(1.1);
+}
+
+/* Modal Stilleri */
+.modal-content {
+    background: rgba(0, 0, 0, 0.9);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 
 .modal-header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
 }
 
 .modal-title {
@@ -172,55 +232,78 @@ body {
     font-weight: 600;
 }
 
+.modal-body {
+    padding: 0;
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+}
+
 .btn-close {
-    color: #fff;
+    filter: brightness(0) invert(1);
 }
 
 /* Footer */
 footer {
-    background: rgba(0, 0, 0, 0.8);
-    color: rgba(255, 255, 255, 0.8);
-    padding: 2rem 0;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 3rem 0;
+    margin-top: 5rem;
     text-align: center;
     position: relative;
-    z-index: 10;
-    margin-top: 4rem;
 }
 
-.more-btn {
-    display: inline-block;
-    background: #1a1a1a;
-    color: #fff;
-    padding: 1rem 2rem;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    font-weight: 500;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
 }
 
-.more-btn:hover {
-    background: #333;
-    color: #fff;
-    text-decoration: none;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+footer p {
+    color: #aaa;
+    margin: 0;
+    font-size: 0.9rem;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
+    .hero {
+        height: 50vh;
+    }
+    
     .hero h1 {
         font-size: 2.5rem;
-        margin-bottom: 0.5rem;
     }
-
+    
     .hero p {
         font-size: 1.2rem;
+    }
+    
+    .hero-content {
+        padding: 2rem;
+        margin: 1rem;
+    }
+    
+    .table-responsive {
+        margin: 0 -15px;
+        border-radius: 0;
+    }
+    
+    .card {
         margin-bottom: 1.5rem;
     }
-
-    .edit-card img {
-        height: 180px;
+    
+    .navbar-brand {
+        font-size: 1.5rem;
     }
-} 
+    
+    .nav-link {
+        padding: 0.5rem 0 !important;
+        margin: 0;
+    }
+}
