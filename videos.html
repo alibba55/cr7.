@@ -8,16 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        .table-thumbnail {
-            width: 160px;
-            height: 90px;
-            object-fit: cover;
-            border-radius: 4px;
-            transition: transform 0.3s;
-        }
-        .table-thumbnail:hover {
-            transform: scale(1.05);
-        }
         .watch-btn {
             background: #007bff;
             color: white;
@@ -30,9 +20,41 @@
         .watch-btn:hover {
             background: #0056b3;
         }
-        .table > :not(caption) > * > * {
-            padding: 1rem;
-            vertical-align: middle;
+        .modal-dialog {
+            max-width: 90%;
+            margin: 1.75rem auto;
+        }
+        .modal-content {
+            background-color: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .modal-header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .modal-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .video-modal-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        .video-modal-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        table img {
+            border-radius: 4px;
+            transition: transform 0.3s;
+        }
+        table img:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -62,9 +84,9 @@
             <table class="table table-dark table-hover">
                 <thead>
                     <tr>
-                        <th>Thumbnail</th>
+                        <th style="width: 130px">Thumbnail</th>
                         <th>Edit</th>
-                        <th>İzle</th>
+                        <th style="width: 100px">İzle</th>
                     </tr>
                 </thead>
                 <tbody id="editsTableBody">
