@@ -1,40 +1,22 @@
-// Video verileri
+// Video editleri
 const edits = [
     {
         id: 1,
-        title: "RONALDO EDIT 1",
-        videoUrl: "https://www.youtube.com/embed/YoBcN-7ZdQs?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
-        thumbnail: "https://img.youtube.com/vi/YoBcN-7ZdQs/maxresdefault.jpg"
+        title: "Real Madrid Muhteşem Edit",
+        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_1",
+        thumbnail: "https://i.ytimg.com/vi/VIDEO_ID_1/maxresdefault.jpg"
     },
     {
         id: 2,
-        title: "RONALDO EDIT 2",
-        videoUrl: "https://www.youtube.com/embed/DLRHDsdatMc?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
-        thumbnail: "https://img.youtube.com/vi/DLRHDsdatMc/maxresdefault.jpg"
+        title: "Real Madrid Özel Performans",
+        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_2",
+        thumbnail: "https://i.ytimg.com/vi/VIDEO_ID_2/maxresdefault.jpg"
     },
     {
         id: 3,
-        title: "RONALDO EDIT 3",
-        videoUrl: "https://www.youtube.com/embed/OMODHFlw8Is?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
-        thumbnail: "https://img.youtube.com/vi/OMODHFlw8Is/maxresdefault.jpg"
-    },
-    {
-        id: 4,
-        title: "RONALDO EDIT 4",
-        videoUrl: "https://www.youtube.com/embed/7Ht9jkWxwUQ?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
-        thumbnail: "https://img.youtube.com/vi/7Ht9jkWxwUQ/maxresdefault.jpg"
-    },
-    {
-        id: 5,
-        title: "RONALDO EDIT 5",
-        videoUrl: "https://www.youtube.com/embed/9GvXKXq4QqY?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
-        thumbnail: "https://img.youtube.com/vi/9GvXKXq4QqY/maxresdefault.jpg"
-    },
-    {
-        id: 6,
-        title: "RONALDO EDIT 6",
-        videoUrl: "https://www.youtube.com/embed/3P1CnWI62Ik?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
-        thumbnail: "https://img.youtube.com/vi/3P1CnWI62Ik/maxresdefault.jpg"
+        title: "Real Madrid Klasik Anlar",
+        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_3",
+        thumbnail: "https://i.ytimg.com/vi/VIDEO_ID_3/maxresdefault.jpg"
     }
 ];
 
@@ -48,15 +30,91 @@ videoModal.addEventListener('hidden.bs.modal', () => {
     videoModalIframe.src = '';
 });
 
-// Ana sayfadaki öne çıkan videoları yükle
+// Ana sayfadaki öne çıkan editleri yükle
 function loadFeaturedEdits() {
+    const container = document.getElementById('featured-edits');
+    if (!container) return;
+
+    edits.forEach(edit => {
+        const col = document.createElement('div');
+        col.className = 'col-md-4 mb-4';
+        col.innerHTML = `
+            <div class="edit-card">
+                <img src="${edit.thumbnail}" alt="${edit.title}">
+                <div class="edit-info">
+                    <h3>${edit.title}</h3>
+                    <button class="watch-btn" data-video-url="${edit.videoUrl}" data-title="${edit.title}">
+                        İzle
+                    </button>
+                </div>
+            </div>
+        `;
+        container.appendChild(col);
+    });
+}
+
+// Videolar sayfasındaki tabloyu yükle
+function loadEditsTable() {
+    const tableBody = document.getElementById('editsTableBody');
+    if (!tableBody) return;
+
+    edits.forEach(edit => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td><img src="${edit.thumbnail}" alt="${edit.title}" style="width: 120px; height: 67.5px; object-fit: cover;"></td>
+            <td>${edit.title}</td>
+            <td>
+                <button class="watch-btn" data-video-url="${edit.videoUrl}" data-title="${edit.title}">
+                    İzle
+                </button>
+            </td>
+        `;
+        tableBody.appendChild(row);
+    });
+}
+
+// Video modalını ayarla
+function setupVideoModal() {
+    const modal = document.getElementById('videoModal');
+    if (!modal) return;
+
+    const modalTitle = modal.querySelector('.modal-title');
+    const iframe = modal.querySelector('iframe');
+    const modalInstance = new bootstrap.Modal(modal);
+
+    // Video butonlarına tıklama olayı ekle
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('watch-btn')) {
+            const videoUrl = e.target.dataset.videoUrl;
+            const title = e.target.dataset.title;
+            
+            modalTitle.textContent = title;
+            iframe.src = videoUrl;
+            modalInstance.show();
+        }
+    });
+
+    // Modal kapandığında videoyu durdur
+    modal.addEventListener('hidden.bs.modal', function() {
+        iframe.src = '';
+    });
+}
+
+// Sayfa yüklendiğinde
+document.addEventListener('DOMContentLoaded', function() {
+    loadFeaturedEdits();
+    loadEditsTable();
+    setupVideoModal();
+});
+
+// Videolar sayfasındaki tüm videoları yükle
+function loadAllEdits() {
     const editsContainer = document.getElementById('edits-container');
     if (!editsContainer) return;
 
     editsContainer.innerHTML = '';
-    const firstThreeEdits = edits.slice(0, 3);
 
-    firstThreeEdits.forEach(edit => {
+    edits.forEach(edit => {
         const col = document.createElement('div');
         col.className = 'col-md-4 mb-4';
 
@@ -93,43 +151,15 @@ function loadFeaturedEdits() {
     }
 }
 
-// Videolar sayfasındaki tüm videoları yükle
-function loadAllEdits() {
-    const editsContainer = document.getElementById('edits-container');
-    if (!editsContainer) return;
-
-    editsContainer.innerHTML = '';
-
-    edits.forEach(edit => {
-        const col = document.createElement('div');
-        col.className = 'col-md-4 mb-4';
-
-        col.innerHTML = `
-            <div class="edit-card">
-                <div class="video-container">
-                    <img src="${edit.thumbnail}" alt="${edit.title}" class="video-thumbnail">
-                </div>
-                <div class="edit-info">
-                    <h3>${edit.title}</h3>
-                </div>
-            </div>
-        `;
-
-        col.querySelector('.edit-card').addEventListener('click', () => {
-            videoModalTitle.textContent = edit.title;
-            videoModalIframe.src = edit.videoUrl;
-            new bootstrap.Modal(videoModal).show();
-        });
-
-        editsContainer.appendChild(col);
-    });
-}
-
-// Sayfa yüklendiğinde
-document.addEventListener('DOMContentLoaded', function() {
-    if (window.location.pathname.includes('videos.html')) {
-        loadAllEdits();
-    } else {
-        loadFeaturedEdits();
+// Her 5 saniyede bir kontrol et
+setInterval(() => {
+    const container = document.getElementById('edits-container');
+    
+    if (container && container.children.length === 0) {
+        if (window.location.pathname.includes('videos.html')) {
+            loadAllEdits();
+        } else {
+            loadEdits();
+        }
     }
-});
+}, 5000); 
