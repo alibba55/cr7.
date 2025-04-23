@@ -3,37 +3,37 @@ const edits = [
     {
         id: 1,
         title: "Ronaldo Vs Courtois",
-        videoUrl: "https://www.youtube.com/embed/4oQu18t8uQc?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
+        videoUrl: "https://www.youtube.com/embed/4oQu18t8uQc",
         thumbnail: "https://img.youtube.com/vi/4oQu18t8uQc/maxresdefault.jpg"
     },
     {
         id: 2,
         title: "2008 Ronaldo",
-        videoUrl: "https://www.youtube.com/embed/tR8y7HV4xBk?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
+        videoUrl: "https://www.youtube.com/embed/tR8y7HV4xBk",
         thumbnail: "https://img.youtube.com/vi/tR8y7HV4xBk/maxresdefault.jpg"
     },
     {
         id: 3,
         title: "Real Comeback",
-        videoUrl: "https://www.youtube.com/embed/YoBcN-7ZdQs?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
+        videoUrl: "https://www.youtube.com/embed/YoBcN-7ZdQs",
         thumbnail: "https://img.youtube.com/vi/YoBcN-7ZdQs/maxresdefault.jpg"
     },
     {
         id: 4,
         title: "Reactions",
-        videoUrl: "https://www.youtube.com/embed/XHakxaH3zrk?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
+        videoUrl: "https://www.youtube.com/embed/XHakxaH3zrk",
         thumbnail: "https://img.youtube.com/vi/XHakxaH3zrk/maxresdefault.jpg"
     },
     {
         id: 5,
         title: "1%...",
-        videoUrl: "https://www.youtube.com/embed/cggHq5SYhY0?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
+        videoUrl: "https://www.youtube.com/embed/cggHq5SYhY0",
         thumbnail: "https://img.youtube.com/vi/cggHq5SYhY0/maxresdefault.jpg"
     },
     {
         id: 6,
         title: "Ronaldo :/",
-        videoUrl: "https://www.youtube.com/embed/Yq1GaIMUbHs?controls=1&modestbranding=1&rel=0&vq=hd1080&autoplay=1&mute=0&enablejsapi=1",
+        videoUrl: "https://www.youtube.com/embed/Yq1GaIMUbHs",
         thumbnail: "https://img.youtube.com/vi/Yq1GaIMUbHs/maxresdefault.jpg"
     }
 ];
