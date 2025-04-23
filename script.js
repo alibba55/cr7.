@@ -1,4 +1,4 @@
-// Edit verileri
+// Video verileri
 const edits = [
     {
         id: 1,
@@ -96,7 +96,7 @@ function loadEdits() {
     }
 }
 
-// Videolar sayfasındaki editleri tablo olarak yükle
+// Videolar sayfasındaki editleri yükle
 function loadAllEdits() {
     const tableBody = document.getElementById('editsTableBody');
     if (!tableBody) return;
