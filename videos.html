@@ -1,24 +1,48 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ronaldo Editleri</title>
+    <title>Ronaldo Edits</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        .watch-btn {
-            background: #007bff;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
+        .edit-card {
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            height: 100%;
         }
-        .watch-btn:hover {
-            background: #0056b3;
+        .edit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .video-container {
+            position: relative;
+            padding-top: 56.25%;
+            overflow: hidden;
+        }
+        .video-thumbnail {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .edit-info {
+            padding: 1rem;
+            text-align: center;
+        }
+        .edit-info h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
         }
         .modal-dialog {
             max-width: 90%;
@@ -26,13 +50,12 @@
         }
         .modal-content {
             background-color: #1a1a1a;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 15px;
         }
         .modal-header {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .modal-footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            border: none;
+            padding: 1.5rem;
         }
         .video-modal-container {
             position: relative;
@@ -40,6 +63,7 @@
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
+            border-radius: 10px;
         }
         .video-modal-container iframe {
             position: absolute;
@@ -49,29 +73,22 @@
             height: 100%;
             border: none;
         }
-        table img {
-            border-radius: 4px;
-            transition: transform 0.3s;
-        }
-        table img:hover {
-            transform: scale(1.05);
-        }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Ronaldo Editleri</a>
+            <a class="navbar-brand" href="index.html">Ronaldo Edits</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Ana Sayfa</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="videos.html">Tüm Editler</a>
+                        <a class="nav-link active" href="videos.html">All Edits</a>
                     </li>
                 </ul>
             </div>
@@ -79,18 +96,18 @@
     </nav>
 
     <div class="container mt-5 pt-5">
-        <h1 class="text-center mb-5">Ronaldo Editleri</h1>
+        <h1 class="text-center mb-5">Ronaldo Edits</h1>
         <div class="table-responsive">
             <table class="table table-dark table-hover">
                 <thead>
                     <tr>
                         <th style="width: 130px">Thumbnail</th>
                         <th>Edit</th>
-                        <th style="width: 100px">İzle</th>
+                        <th style="width: 100px">Watch</th>
                     </tr>
                 </thead>
                 <tbody id="editsTableBody">
-                    <!-- Editler buraya yüklenecek -->
+                    <!-- Edits will be loaded here -->
                 </tbody>
             </table>
         </div>
@@ -115,7 +132,7 @@
 
     <footer class="footer mt-5">
         <div class="container">
-            <p>&copy; 2024 Ronaldo Edits. Tüm hakları saklıdır.</p>
+            <p>&copy; 2024 Ronaldo Edits. All rights reserved.</p>
         </div>
     </footer>
 
