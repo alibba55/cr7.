@@ -1,4 +1,4 @@
-// Edit verileri
+// Video data
 const edits = [
     {
         id: 1,
@@ -38,24 +38,24 @@ const edits = [
     }
 ];
 
-// Video modal elementi
+// Video modal elements
 const videoModal = document.getElementById('videoModal');
 const videoModalTitle = document.getElementById('videoModalTitle');
 const videoModalIframe = document.getElementById('videoModalIframe');
 
-// Modal kapatıldığında videoyu durdur
+// Stop video when modal is closed
 videoModal.addEventListener('hidden.bs.modal', () => {
     videoModalIframe.src = '';
 });
 
-// Ana sayfadaki editleri yükle
+// Load featured edits on homepage
 function loadEdits() {
     const container = document.getElementById('edits-container');
     if (!container) return;
     
     container.innerHTML = '';
     
-    // Sadece ilk 3 edit'i göster
+    // Show only first 3 edits
     const firstThreeEdits = edits.slice(0, 3);
     
     firstThreeEdits.forEach(edit => {
@@ -73,7 +73,7 @@ function loadEdits() {
             </div>
         `;
         
-        // Video kartına tıklandığında modalı aç
+        // Open modal when video card is clicked
         col.querySelector('.edit-card').addEventListener('click', () => {
             videoModalTitle.textContent = edit.title;
             videoModalIframe.src = edit.videoUrl;
@@ -83,20 +83,20 @@ function loadEdits() {
         container.appendChild(col);
     });
 
-    // "Daha Fazla" butonu ekle
+    // Add "More" button
     if (edits.length > 3) {
         const moreButton = document.createElement('div');
         moreButton.className = 'col-12 text-center mt-4';
         moreButton.innerHTML = `
             <a href="videos.html" class="btn btn-primary btn-lg">
-                Daha Fazla Edit İzle
+                Watch More Edits
             </a>
         `;
         container.appendChild(moreButton);
     }
 }
 
-// Videolar sayfasındaki editleri yükle
+// Load all edits on videos page
 function loadAllEdits() {
     const tableBody = document.getElementById('editsTableBody');
     if (!tableBody) return;
@@ -113,12 +113,12 @@ function loadAllEdits() {
             <td>${edit.title}</td>
             <td>
                 <button class="watch-btn" data-video-url="${edit.videoUrl}" data-video-title="${edit.title}">
-                    <i class="fas fa-play"></i> İzle
+                    <i class="fas fa-play"></i> Watch
                 </button>
             </td>
         `;
         
-        // Thumbnail'a tıklandığında modalı aç
+        // Open modal when thumbnail is clicked
         row.querySelector('.table-thumbnail').addEventListener('click', (e) => {
             const img = e.currentTarget;
             videoModalTitle.textContent = img.dataset.videoTitle;
@@ -126,7 +126,7 @@ function loadAllEdits() {
             new bootstrap.Modal(videoModal).show();
         });
         
-        // İzle butonuna tıklandığında modalı aç
+        // Open modal when watch button is clicked
         row.querySelector('.watch-btn').addEventListener('click', (e) => {
             const button = e.currentTarget;
             videoModalTitle.textContent = button.dataset.videoTitle;
@@ -138,26 +138,11 @@ function loadAllEdits() {
     });
 }
 
-// Sayfa yüklendiğinde uygun fonksiyonu çağır
+// Call appropriate function when page loads
 document.addEventListener('DOMContentLoaded', () => {
     if (window.location.pathname.includes('videos.html')) {
         loadAllEdits();
     } else if (document.getElementById('edits-container')) {
         loadEdits();
     }
-});
-
-// Her 5 saniyede bir kontrol et
-setInterval(() => {
-    if (window.location.pathname.includes('videos.html')) {
-        const tableBody = document.getElementById('editsTableBody');
-        if (tableBody && tableBody.children.length === 0) {
-            loadAllEdits();
-        }
-    } else {
-        const container = document.getElementById('edits-container');
-        if (container && container.children.length === 0) {
-            loadEdits();
-        }
-    }
-}, 5000);
+}); 
