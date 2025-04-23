@@ -11,7 +11,6 @@
         body {
             background-color: #000;
             color: #fff;
-            font-family: 'Inter', sans-serif;
         }
 
         .navbar {
@@ -30,33 +29,8 @@
             color: #007bff;
         }
 
-        .hero-section {
-            position: relative;
-            height: 60vh;
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.imgur.com/XhKym1F.jpg');
-            background-size: cover;
-            background-position: center;
-            margin-bottom: 3rem;
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-
-        .hero-text {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
+        .main-content {
+            padding-top: 5rem;
         }
 
         .section-title {
@@ -69,7 +43,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1.5rem;
-            margin-bottom: 3rem;
         }
 
         .video-card {
@@ -78,11 +51,10 @@
             transition: transform 0.3s ease;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         .video-card:hover {
-            transform: translateY(-5px);
+            transform: scale(1.02);
         }
 
         .video-thumbnail {
@@ -113,23 +85,6 @@
         .btn-close-white {
             filter: invert(1) grayscale(100%) brightness(200%);
         }
-
-        .view-all-btn {
-            display: inline-block;
-            padding: 0.8rem 2rem;
-            background: transparent;
-            color: #fff;
-            border: 2px solid #fff;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .view-all-btn:hover {
-            background: #fff;
-            color: #000;
-        }
     </style>
 </head>
 <body>
@@ -155,18 +110,8 @@
         </div>
     </nav>
 
-    <section class="hero-section">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Ronaldo Edits</h1>
-                <p class="hero-text">Experience the best moments of Cristiano Ronaldo through our carefully crafted edits.</p>
-                <a href="videos.html" class="view-all-btn">View All Edits</a>
-            </div>
-        </div>
-    </section>
-
-    <div class="container">
-        <h2 class="section-title">Featured Edits</h2>
+    <div class="container main-content">
+        <h1 class="section-title">Featured Edits</h1>
         <div class="video-grid" id="featuredEdits">
             <!-- Featured edits will be loaded here -->
         </div>
