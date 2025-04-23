@@ -96,48 +96,63 @@ function loadEdits() {
     }
 }
 
-// Videolar sayfasındaki editleri yükle
-function loadAllEdits() {
-    const container = document.getElementById('edits-container');
-    if (!container) return;
+// Videolar sayfasındaki tabloyu yükle
+function loadEditsTable() {
+    const tableBody = document.getElementById('editsTableBody');
+    if (!tableBody) return;
     
-    container.innerHTML = '';
+    tableBody.innerHTML = '';
     
     edits.forEach(edit => {
-        const col = document.createElement('div');
-        col.className = 'col-md-4 mb-4';
-        
-        col.innerHTML = `
-            <div class="edit-card">
-                <div class="video-container">
-                    <img src="${edit.thumbnail}" alt="${edit.title}" class="video-thumbnail">
-                </div>
-                <div class="edit-info">
-                    <h3>${edit.title}</h3>
-                </div>
-            </div>
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td><img src="${edit.thumbnail}" alt="${edit.title}" style="width: 120px; height: 67.5px; object-fit: cover;"></td>
+            <td>${edit.title}</td>
+            <td>
+                <button class="watch-btn" data-video-url="${edit.videoUrl}" data-title="${edit.title}">
+                    İzle
+                </button>
+            </td>
         `;
-        
-        // Video kartına tıklandığında modalı aç
-        col.querySelector('.edit-card').addEventListener('click', () => {
-            videoModalTitle.textContent = edit.title;
-            videoModalIframe.src = edit.videoUrl;
-            new bootstrap.Modal(videoModal).show();
-        });
-        
-        container.appendChild(col);
+        tableBody.appendChild(row);
     });
 }
 
-// Sayfa yüklendiğinde uygun fonksiyonu çağır
-document.addEventListener('DOMContentLoaded', () => {
-    if (document.getElementById('edits-container')) {
-        if (window.location.pathname.includes('videos.html')) {
-            loadAllEdits();
-        } else {
-            loadEdits();
+// Video modalını ayarla
+function setupVideoModal() {
+    const modal = document.getElementById('videoModal');
+    if (!modal) return;
+
+    const modalTitle = modal.querySelector('.modal-title');
+    const iframe = modal.querySelector('iframe');
+    const modalInstance = new bootstrap.Modal(modal);
+
+    // Video butonlarına tıklama olayı ekle
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('watch-btn')) {
+            const videoUrl = e.target.dataset.videoUrl;
+            const title = e.target.dataset.title;
+            
+            modalTitle.textContent = title;
+            iframe.src = videoUrl;
+            modalInstance.show();
         }
+    });
+
+    // Modal kapandığında videoyu durdur
+    modal.addEventListener('hidden.bs.modal', function() {
+        iframe.src = '';
+    });
+}
+
+// Sayfa yüklendiğinde
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.pathname.includes('videos.html')) {
+        loadEditsTable();
+    } else {
+        loadEdits();
     }
+    setupVideoModal();
 });
 
 // Her 5 saniyede bir kontrol et
