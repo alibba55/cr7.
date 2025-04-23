@@ -1,57 +1,53 @@
-/* General Styles */
-body {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+/* Hero Section */
+.hero {
+    background: url('https://www.wallpapergap.com/cdn/24/405/cristiano-ronaldo-world-cup-wallpaper-4k-1920x1080.jpg') center/cover no-repeat;
     color: #fff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 150px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
 }
 
-/* Navbar Styles */
-.navbar {
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
 }
 
-.navbar-brand {
+.hero-content {
+    position: relative;
+    z-index: 2;
+    opacity: 0.9;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
     font-size: 1.5rem;
-    font-weight: 600;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.navbar-brand img {
-    border-radius: 50%;
-    margin-right: 10px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-.nav-link {
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.nav-link:hover {
-    color: #007bff !important;
-}
-
-.nav-link.active {
-    color: #fff !important;
-    font-weight: 600;
-    background: rgba(255, 255, 255, 0.15);
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-/* Tablo stilleri */
+/* Table Styles */
 .table {
     margin-bottom: 2rem;
     border-radius: 8px;
     overflow: hidden;
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .table th {
@@ -60,30 +56,48 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     border: none;
+    font-size: 0.9rem;
+    padding: 1rem;
 }
 
 .table td {
     vertical-align: middle;
     border-color: rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1rem;
 }
 
 .table-thumbnail {
-    width: 160px;
-    height: 90px;
+    width: 120px;
+    height: 68px;
     object-fit: cover;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.table-thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .watch-btn {
     background: #007bff;
     color: white;
     border: none;
-    padding: 8px 16px;
+    padding: 6px 12px;
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s;
     font-weight: 500;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.watch-btn i {
+    font-size: 0.8rem;
 }
 
 .watch-btn:hover {
@@ -92,15 +106,67 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Edit Card Styles */
+.edit-card {
+    background: rgba(20, 20, 20, 0.95);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.edit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    overflow: hidden;
+}
+
+.video-thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.edit-info {
+    padding: 20px;
+    background: rgba(25, 25, 25, 0.98);
+}
+
+.edit-info h3 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.edit-info p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0;
+}
+
 /* Modal Styles */
 .modal-content {
-    background-color: #1a1a1a;
+    background: rgba(20, 20, 20, 0.98);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
 }
 
 .modal-header {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 1rem;
+    border-bottom: none;
+    padding: 20px;
 }
 
 .modal-title {
@@ -110,76 +176,76 @@ body {
 
 .btn-close-white {
     filter: brightness(0) invert(1);
+    opacity: 0.8;
 }
 
-.ratio-16x9 {
-    border-radius: 0 0 8px 8px;
+.video-modal-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
     overflow: hidden;
 }
 
-/* Footer Styles */
-.footer {
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 1.5rem 0;
-    margin-top: auto;
+.video-modal-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
-.footer p {
-    margin: 0;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.7);
+/* Button Styles */
+.btn-primary {
+    background: linear-gradient(145deg, #3498db, #2980b9);
+    border: none;
+    padding: 12px 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .navbar-brand {
-        font-size: 1.1rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .edit-card {
-        margin-bottom: 20px;
-    }
-
-    .edit-info h3 {
-        font-size: 1rem;
-    }
-
-    .edit-info p {
-        font-size: 0.85rem;
-    }
-
-    .edit-info .btn-watch {
-        width: 100%;
-        text-align: center;
-    }
-
-    .hero-content h1 {
+    .hero h1 {
         font-size: 2.5rem;
     }
     
-    .hero-content p {
-        font-size: 1rem;
+    .hero p {
+        font-size: 1.2rem;
     }
     
-    .about-section {
-        padding: 3rem 0;
-    }
-
-    .table-thumbnail {
-        width: 120px;
-        height: 68px;
+    .table thead {
+        display: none;
     }
     
-    .watch-btn {
-        padding: 6px 12px;
-        font-size: 0.9rem;
+    .table tbody td {
+        display: block;
+        text-align: center;
+        padding: 10px;
     }
     
-    .modal-dialog {
-        margin: 0.5rem;
+    .table tbody td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    .table tbody td img {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+    
+    .edit-card {
+        margin: 0 10px 20px;
     }
 } 
