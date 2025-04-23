@@ -1,3 +1,4 @@
+/* Ana stil kodları (style.css) */
 body {
     background-color: #0a0a0a !important;
     color: #fff;
@@ -57,6 +58,90 @@ body {
     text-align: center;
 }
 
+/* Tablo özel stilleri (videos.html içinde) */
+.table-container {
+    background: rgba(20, 20, 20, 0.95);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 2rem;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table > :not(caption) > * > * {
+    background: transparent;
+    color: #fff;
+    padding: 1rem;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.table thead th {
+    background: rgba(0, 0, 0, 0.3);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    border: none;
+}
+
+.table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.table-thumbnail {
+    width: 160px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.table-thumbnail:hover {
+    transform: scale(1.05);
+}
+
+.watch-btn {
+    background: #1a1a1a;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.watch-btn:hover {
+    background: #333;
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.watch-btn i {
+    font-size: 0.8rem;
+}
+
+.page-title {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 /* Dark theme overrides */
 .btn-close-white {
     filter: invert(1) grayscale(100%) brightness(200%);
@@ -68,4 +153,4 @@ body {
 
 .container {
     margin-bottom: 2rem;
-} 
+}
