@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg-dark">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Ronaldo Edits</a>
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-play-circle"></i>
+                Ronaldo Edits
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -28,19 +31,21 @@
         </div>
     </nav>
 
-    <div class="hero">
+    <section class="hero">
         <div class="hero-content">
             <h1>Welcome to Ronaldo Edits</h1>
-            <p>Watch the best Cristiano Ronaldo edit videos</p>
+            <p>Experience the best moments of CR7 through our carefully crafted edits</p>
         </div>
-    </div>
+    </section>
 
-    <div class="container py-5">
-        <h2 class="text-center mb-5">Featured Edits</h2>
-        <div class="row" id="edits-container">
-            <!-- Edits will be loaded here -->
+    <section class="featured-section">
+        <div class="container">
+            <h2>Featured Edits</h2>
+            <div class="row g-4" id="edits-container">
+                <!-- Edits will be loaded here -->
+            </div>
         </div>
-    </div>
+    </section>
 
     <!-- Video Modal -->
     <div class="modal fade" id="videoModal" tabindex="-1">
@@ -68,4 +73,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
