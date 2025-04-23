@@ -3,37 +3,37 @@ const edits = [
     {
         id: 1,
         title: "Ronaldo Vs Courtois",
-        videoUrl: "https://www.youtube.com/shorts/4oQu18t8uQc?feature=share",
+        videoUrl: "https://youtube.com/shorts/4oQu18t8uQc?si=p5C1ERJTA23O8Jkx",
         thumbnail: "https://img.youtube.com/vi/YoBcN-7ZdQs/maxresdefault.jpg"
     },
     {
         id: 2,
-        title: "Ronaldo :/",
-        videoUrl: "https://www.youtube.com/shorts/Yq1GaIMUbHs?feature=share",
+        title: "2008 Ronaldo",
+        videoUrl: "https://youtube.com/shorts/tR8y7HV4xBk?si=wsPIiSOoRTh0hFgw",
         thumbnail: "https://img.youtube.com/vi/DLRHDsdatMc/maxresdefault.jpg"
     },
     {
         id: 3,
         title: "Real Comeback",
-        videoUrl: "https://www.youtube.com/shorts/Yq1GaIMUbHs?feature=share",
+        videoUrl: "https://youtube.com/shorts/YoBcN-7ZdQs?si=GbJV5vE3199vTJ_l",
         thumbnail: "https://img.youtube.com/vi/OMODHFlw8Is/maxresdefault.jpg"
     },
     {
         id: 4,
         title: "Reactions",
-        videoUrl: "https://www.youtube.com/shorts/XHakxaH3zrk?feature=share",
+        videoUrl: "https://youtube.com/shorts/XHakxaH3zrk?si=TEtg-1SPnn3ThlRU",
         thumbnail: "https://img.youtube.com/vi/7Ht9jkWxwUQ/maxresdefault.jpg"
     },
     {
         id: 5,
         title: "1%...",
-        videoUrl: "https://www.youtube.com/shorts/cggHq5SYhY0?feature=share",
+        videoUrl: "https://youtube.com/shorts/cggHq5SYhY0?si=zRASSi6LgoucwS99",
         thumbnail: "https://img.youtube.com/vi/9GvXKXq4QqY/maxresdefault.jpg"
     },
     {
         id: 6,
-        title: "2008 Ronny",
-        videoUrl: "https://www.youtube.com/shorts/tR8y7HV4xBk?feature=share",
+        title: "Ronaldo :/",
+        videoUrl: "https://youtube.com/shorts/Yq1GaIMUbHs?si=OU37iyV7znOm6DBB",
         thumbnail: "https://img.youtube.com/vi/3P1CnWI62Ik/maxresdefault.jpg"
     }
 ];
