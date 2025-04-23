@@ -1,4 +1,4 @@
-// Video verileri
+// Edit verileri
 const edits = [
     {
         id: 1,
@@ -108,7 +108,7 @@ function loadAllEdits() {
         
         row.innerHTML = `
             <td>
-                <img src="${edit.thumbnail}" alt="${edit.title}" class="table-thumbnail">
+                <img src="${edit.thumbnail}" alt="${edit.title}" class="table-thumbnail" data-video-url="${edit.videoUrl}" data-video-title="${edit.title}">
             </td>
             <td>${edit.title}</td>
             <td>
@@ -118,7 +118,15 @@ function loadAllEdits() {
             </td>
         `;
         
-        // Video butonuna tıklandığında modalı aç
+        // Thumbnail'a tıklandığında modalı aç
+        row.querySelector('.table-thumbnail').addEventListener('click', (e) => {
+            const img = e.currentTarget;
+            videoModalTitle.textContent = img.dataset.videoTitle;
+            videoModalIframe.src = img.dataset.videoUrl;
+            new bootstrap.Modal(videoModal).show();
+        });
+        
+        // İzle butonuna tıklandığında modalı aç
         row.querySelector('.watch-btn').addEventListener('click', (e) => {
             const button = e.currentTarget;
             videoModalTitle.textContent = button.dataset.videoTitle;
