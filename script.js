@@ -17,6 +17,24 @@ const edits = [
         title: "Real Madrid Klasik Anlar",
         videoUrl: "https://www.youtube.com/embed/VIDEO_ID_3",
         thumbnail: "https://i.ytimg.com/vi/VIDEO_ID_3/maxresdefault.jpg"
+    },
+    {
+        id: 4,
+        title: "Real Madrid Gol Şovu",
+        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_4",
+        thumbnail: "https://i.ytimg.com/vi/VIDEO_ID_4/maxresdefault.jpg"
+    },
+    {
+        id: 5,
+        title: "Real Madrid Şampiyonluk Anları",
+        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_5",
+        thumbnail: "https://i.ytimg.com/vi/VIDEO_ID_5/maxresdefault.jpg"
+    },
+    {
+        id: 6,
+        title: "Real Madrid Efsane Maçlar",
+        videoUrl: "https://www.youtube.com/embed/VIDEO_ID_6",
+        thumbnail: "https://i.ytimg.com/vi/VIDEO_ID_6/maxresdefault.jpg"
     }
 ];
 
@@ -32,10 +50,13 @@ videoModal.addEventListener('hidden.bs.modal', () => {
 
 // Ana sayfadaki öne çıkan editleri yükle
 function loadFeaturedEdits() {
-    const container = document.getElementById('featured-edits');
+    const container = document.getElementById('edits-container');
     if (!container) return;
 
-    edits.forEach(edit => {
+    // Sadece ilk 3 edit'i göster
+    const firstThreeEdits = edits.slice(0, 3);
+    
+    firstThreeEdits.forEach(edit => {
         const col = document.createElement('div');
         col.className = 'col-md-4 mb-4';
         col.innerHTML = `
